@@ -1,0 +1,6 @@
+pandas==2.2.2
+cuid==0.4
+numpy>=1.26.0
+python-dateutil>=2.8.2
+pytz>=2020.1
+tzdata>=2022.7
