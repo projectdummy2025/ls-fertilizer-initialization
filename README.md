@@ -49,12 +49,6 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-### 3. Instalasi Dependensi
-Setelah virtual environment aktif, instal library yang dibutuhkan:
-```bash
-pip install -r requirements.txt
-```
-
 ## Setup dan Menjalankan Jupyter Notebook
 
 Karena konverter ini berbentuk file .ipynb, Anda perlu menjalankan server Jupyter:
