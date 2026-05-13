@@ -1,28 +1,28 @@
-# 🌱 Prototipe Sistem Rekomendasi Pupuk Presisi Berbasis Kesehatan Tanah
+# Prototipe Sistem Rekomendasi Pupuk Presisi Berbasis Kesehatan Tanah
 
 > **Decision Support System (DSS)** untuk mengatasi Inefisiensi Penggunaan Pupuk Bersubsidi & Degradasi Tanah di Indonesia.
 
 ---
 
-## 📌 Problem Statement
-Petani kecil sering menggunakan pupuk secara umum (misal: hanya Urea) tanpa melihat kondisi tanah (pH, Nitrogen, dll). Hal ini menyebabkan:
+## Problem Statement
+Petani kecil sering menggunakan pupuk secara umum (misal: hanya Urea) tanpa melihat kondisi tanah dan kadar unsur hara (pH, N, P, K). Hal ini menyebabkan:
 *   **Tanah Menjadi Asam:** Kerusakan struktur tanah jangka panjang.
 *   **Biaya Membengkak:** Penggunaan pupuk yang tidak efisien menghabiskan modal.
 *   **Hasil Panen Tidak Maksimal:** Nutrisi tidak sesuai dengan kebutuhan tanaman.
 
-**Solusi:** Sebuah alat berbasis web di mana pengguna memasukkan data tanah & tanaman, dan sistem memberikan rekomendasi jenis pupuk yang *tepat* beserta estimasi penghematan biaya.
+**Solusi:** Sebuah alat berbasis web di mana pengguna memasukkan kondisi tanah, unsur hara, & tanaman, dan sistem memberikan rekomendasi jenis pupuk yang *tepat* beserta estimasi penghematan biaya.
 
 ---
 
-## 🚀 Fitur Utama (MVP)
-1.  **Input Data Tanah:** Parameter pH, Nitrogen (N), Fosfor (P), Kalium (K), Kelembapan, dan Suhu.
+## Fitur Utama (MVP)
+1.  **Input Kondisi Tanah & Unsur Hara:** Parameter pH, kelembapan, suhu, serta kadar Nitrogen (N), Fosfor (P), dan Kalium (K).
 2.  **Smart Prediction:** Menggunakan model Machine Learning (Random Forest) untuk menentukan rekomendasi pupuk terbaik.
 3.  **Soil Health Status:** Identifikasi otomatis status tanah (Asam/Normal/Basa).
 4.  **Business Intelligence:** Estimasi biaya pemupukan per kg untuk membantu perencanaan anggaran petani.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 *   **Language:** Python 3.8+
 *   **Framework:** [Streamlit](https://streamlit.io/) (Web UI)
 *   **ML Libraries:** Scikit-Learn, Pandas, NumPy
@@ -30,7 +30,34 @@ Petani kecil sering menggunakan pupuk secara umum (misal: hanya Urea) tanpa meli
 
 ---
 
-## 📅 Rencana Pengembangan (7 Hari)
+## Panduan Instalasi & Setup
+
+Ikuti langkah-langkah berikut untuk menyiapkan lingkungan kerja Anda:
+
+### 1. Membuat Virtual Environment
+Disarankan menggunakan *virtual environment* agar dependensi tidak bentrok dengan proyek lain:
+
+**Linux / macOS:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+**Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### 2. Instalasi Dependensi
+Setelah masuk ke *environment*, instal library yang diperlukan:
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Rencana Pengembangan (7 Hari)
 
 | Hari | Fokus | Tugas Utama |
 | :--- | :--- | :--- |
@@ -44,7 +71,7 @@ Petani kecil sering menggunakan pupuk secara umum (misal: hanya Urea) tanpa meli
 
 ---
 
-## 💻 Implementasi Teknis
+## Implementasi Teknis
 
 ### 1. Training Model
 Sistem menggunakan `Random Forest Classifier` untuk memproses input numerik dan kategorikal. Model disimpan dalam format `.pkl` untuk inferensi cepat di aplikasi web.
@@ -56,10 +83,10 @@ Selain prediksi ML, sistem menyertakan *business rules*:
 
 ---
 
-## ⚠️ Disclaimer & Risiko
+## Disclaimer & Risiko
 *   **Lokalisasi Data:** Dataset saat ini memerlukan kalibrasi ulang untuk karakteristik tanah vulkanik spesifik di Indonesia (Data Balits Tanah).
 *   **Variabel Eksternal:** Belum memperhitungkan harga pupuk dinamis di pasar lokal.
 *   **Validasi:** Rekomendasi sistem tetap disarankan untuk dikonsultasikan dengan penyuluh pertanian setempat.
 
 ---
-**Built with ❤️ by Lumbung Stack Team**
+**Built with love by Lumbung Stack Team**
