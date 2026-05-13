@@ -1,4 +1,4 @@
-# Fertilizer SQL Initialization
+# Fertilizer Initialization
 
 Alat otomatisasi untuk mengonversi dataset rekomendasi pupuk dari format CSV ke SQL Dump yang siap pakai. Alat ini dirancang untuk mempermudah migrasi data riset pertanian ke dalam sistem database relasional.
 
