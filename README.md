@@ -1,100 +1,65 @@
-# Fertilizer Initialization
+# 🌱 Prototipe Sistem Rekomendasi Pupuk Presisi Berbasis Kesehatan Tanah
 
-Alat otomatisasi untuk mengonversi dataset rekomendasi pupuk dari format CSV ke SQL Dump yang siap pakai. Alat ini dirancang untuk mempermudah migrasi data riset pertanian ke dalam sistem database relasional.
-
-## Fitur Utama
-
-- Otomatisasi Konversi: Mengubah ribuan baris data CSV menjadi perintah INSERT SQL dalam hitungan detik.
-- ID Generator (CUID): Menggunakan cuid untuk menjamin keunikan ID di setiap baris data.
-- Data Cleaning: Pembersihan otomatis nilai NULL dan pemetaan kolom agar sesuai dengan skema database modern.
-- SQL Escaping: Penanganan karakter khusus (seperti tanda petik tunggal) untuk mencegah error SQL.
-- Transactional Dump: Output SQL dibungkus dalam blok BEGIN dan COMMIT untuk menjamin integritas data.
-
-## Struktur Proyek
-
-```bash
-.
-├── data/
-│   └── fertilizer_recommendation.csv  # Input dataset
-├── sql_dump/
-│   └── seed_data.sql                 # Output hasil konversi
-├── csv2sql_factory.ipynb             # Notebook konversi utama
-├── requirements.txt                  # Dependensi Python
-├── .gitignore                        # Konfigurasi Git ignore
-└── LICENSE                           # Lisensi Proyek
-```
-
-## Tutorial Setup Environment
-
-Ikuti langkah-langkah berikut untuk menyiapkan lingkungan kerja Anda:
-
-### 1. Persiapan Python
-Pastikan Anda sudah menginstal Python (versi 3.8 ke atas direkomendasikan). Cek dengan perintah:
-```bash
-python --version
-```
-
-### 2. Membuat Virtual Environment
-Disarankan menggunakan virtual environment agar dependensi tidak bentrok dengan proyek lain:
-
-**Linux / macOS:**
-```bash
-python -m venv venv
-source venv/bin/activate
-```
-
-**Windows:**
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-## Setup dan Menjalankan Jupyter Notebook
-
-Karena konverter ini berbentuk file .ipynb, Anda perlu menjalankan server Jupyter:
-
-### 1. Instalasi Jupyter
-Jika Anda belum memiliki Jupyter, instal melalui pip:
-```bash
-pip install jupyter
-```
-
-### 2. Menjalankan Server
-Jalankan perintah berikut di terminal:
-```bash
-jupyter notebook
-```
-Perintah ini akan membuka browser secara otomatis. Jika tidak, klik link yang muncul di terminal (biasanya http://localhost:8888).
-
-### 3. Eksekusi Konverter
-1. Di halaman utama Jupyter, pilih file `csv2sql_factory.ipynb`.
-2. Pastikan file dataset sudah ada di folder `data/fertilizer_recommendation.csv`.
-3. Pilih menu **Cell** -> **Run All** untuk menjalankan seluruh proses konversi.
-4. Hasil SQL akan muncul di folder `sql_dump/seed_data.sql`.
-
-## Skema Tabel Target
-
-Data akan dimasukkan ke dalam tabel "soil_references" dengan struktur berikut:
-
-| Kolom | Tipe Data | Deskripsi |
-| :--- | :--- | :--- |
-| id | VARCHAR | Unique ID (CUID) |
-| soil_type | VARCHAR | Jenis Tanah |
-| temperature | FLOAT | Suhu Lingkungan |
-| humidity | FLOAT | Kelembapan |
-| crop_type | VARCHAR | Jenis Tanaman |
-| nitrogen | FLOAT | Kadar Nitrogen (N) |
-| phosphorus | FLOAT | Kadar Fosfor (P) |
-| potassium | FLOAT | Kadar Kalium (K) |
-| ph | FLOAT | pH Tanah |
-| organic_carbon | FLOAT | Karbon Organik |
-| electrical_conductivity | FLOAT | Konduktivitas Listrik |
-| rainfall | FLOAT | Curah Hujan |
-| recommended_fertilizer | VARCHAR | Pupuk yang Direkomendasikan |
-
-## Lisensi
-
-Proyek ini dibuat untuk mendukung ekosistem pertanian digital Indonesia. Bebas digunakan untuk keperluan riset dan pengembangan sesuai dengan ketentuan Lisensi MIT.
+> **Decision Support System (DSS)** untuk mengatasi Inefisiensi Penggunaan Pupuk Bersubsidi & Degradasi Tanah di Indonesia.
 
 ---
-Built by Lumbung Stack
+
+## 📌 Problem Statement
+Petani kecil sering menggunakan pupuk secara umum (misal: hanya Urea) tanpa melihat kondisi tanah (pH, Nitrogen, dll). Hal ini menyebabkan:
+*   **Tanah Menjadi Asam:** Kerusakan struktur tanah jangka panjang.
+*   **Biaya Membengkak:** Penggunaan pupuk yang tidak efisien menghabiskan modal.
+*   **Hasil Panen Tidak Maksimal:** Nutrisi tidak sesuai dengan kebutuhan tanaman.
+
+**Solusi:** Sebuah alat berbasis web di mana pengguna memasukkan data tanah & tanaman, dan sistem memberikan rekomendasi jenis pupuk yang *tepat* beserta estimasi penghematan biaya.
+
+---
+
+## 🚀 Fitur Utama (MVP)
+1.  **Input Data Tanah:** Parameter pH, Nitrogen (N), Fosfor (P), Kalium (K), Kelembapan, dan Suhu.
+2.  **Smart Prediction:** Menggunakan model Machine Learning (Random Forest) untuk menentukan rekomendasi pupuk terbaik.
+3.  **Soil Health Status:** Identifikasi otomatis status tanah (Asam/Normal/Basa).
+4.  **Business Intelligence:** Estimasi biaya pemupukan per kg untuk membantu perencanaan anggaran petani.
+
+---
+
+## 🛠️ Tech Stack
+*   **Language:** Python 3.8+
+*   **Framework:** [Streamlit](https://streamlit.io/) (Web UI)
+*   **ML Libraries:** Scikit-Learn, Pandas, NumPy
+*   **Modeling:** Random Forest Classifier
+
+---
+
+## 📅 Rencana Pengembangan (7 Hari)
+
+| Hari | Fokus | Tugas Utama |
+| :--- | :--- | :--- |
+| **1** | **Data Prep** | Cleaning & Lokalisasi Musim (Hujan/Kemarau). |
+| **2** | **EDA** | Analisis korelasi pH & nutrisi terhadap jenis pupuk. |
+| **3** | **Modeling** | Training model Random Forest/XGBoost. |
+| **4** | **Logic Biz** | Integrasi sistem peringatan kesehatan tanah (pH warning). |
+| **5** | **Dev UI** | Pembangunan interface Streamlit yang intuitif. |
+| **6** | **Testing** | Uji coba dengan data dummy & validasi logika. |
+| **7** | **Deploy** | Deployment ke Streamlit Cloud & Finalisasi Dokumentasi. |
+
+---
+
+## 💻 Implementasi Teknis
+
+### 1. Training Model
+Sistem menggunakan `Random Forest Classifier` untuk memproses input numerik dan kategorikal. Model disimpan dalam format `.pkl` untuk inferensi cepat di aplikasi web.
+
+### 2. Logika Keputusan
+Selain prediksi ML, sistem menyertakan *business rules*:
+- Jika `pH < 5.5`: Peringatan tanah terlalu asam & saran pengapuran.
+- Jika `pH > 7.5`: Peringatan tanah terlalu basa & saran penggunaan pupuk asam (ZA).
+
+---
+
+## ⚠️ Disclaimer & Risiko
+*   **Lokalisasi Data:** Dataset saat ini memerlukan kalibrasi ulang untuk karakteristik tanah vulkanik spesifik di Indonesia (Data Balits Tanah).
+*   **Variabel Eksternal:** Belum memperhitungkan harga pupuk dinamis di pasar lokal.
+*   **Validasi:** Rekomendasi sistem tetap disarankan untuk dikonsultasikan dengan penyuluh pertanian setempat.
+
+---
+**Built with ❤️ by Lumbung Stack Team**
