@@ -57,7 +57,7 @@ pip install -r requirements.txt
 
 ---
 
-## Rencana Pengembangan (7 Hari)
+## Rencana Pengembangan
 
 | Hari | Fokus | Tugas Utama |
 | :--- | :--- | :--- |
@@ -74,8 +74,7 @@ pip install -r requirements.txt
 ## Implementasi Teknis
 
 ### 1. Training Model
-Sistem menggunakan `Random Forest Classifier` untuk memproses input numerik dan kategorikal. Model disimpan dalam format `.pkl` untuk inferensi cepat di aplikasi web.
-
+Sistem menggunakan `Random Forest Classifier` untuk memproses input numerik dan kategorikal. 
 ### 2. Logika Keputusan
 Selain prediksi ML, sistem menyertakan *business rules*:
 - Jika `pH < 5.5`: Peringatan tanah terlalu asam & saran pengapuran.
