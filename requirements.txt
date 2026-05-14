@@ -4,3 +4,6 @@ streamlit
 numpy
 pickle-mixin
 cuid
+matplotlib
+seaborn
+ipykernel
