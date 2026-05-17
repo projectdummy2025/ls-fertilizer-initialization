@@ -1,0 +1,7 @@
+Soil_pH
+Nitrogen_Level
+Phosphorus_Level
+Potassium_Level
+Organic_Carbon
+Soil_Moisture
+Crop_Type
