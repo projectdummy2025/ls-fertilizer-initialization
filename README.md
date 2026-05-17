@@ -82,6 +82,14 @@ Selain prediksi ML, sistem menyertakan *business rules*:
 
 ---
 
+## Roadmap & Rencana Mendatang
+Untuk meningkatkan nilai praktis bagi petani di lapangan, rencana pengembangan selanjutnya meliputi:
+1.  **Local Brand Mapping:** Mengintegrasikan database pupuk komersial Indonesia (misal: Phonska, Mutiara, Nitrea) agar rekomendasi merujuk pada produk nyata di pasar, bukan sekadar istilah kimia.
+2.  **Kalkulator Dosis Presisi:** Menambahkan fitur penghitungan jumlah karung pupuk yang harus dibeli berdasarkan luas lahan pengguna (Hektar/Are).
+3.  **Integrasi Harga Dinamis:** Menghubungkan sistem dengan referensi Harga Eceran Tertinggi (HET) pupuk bersubsidi dan harga pasar non-subsidi untuk perencanaan anggaran yang lebih akurat.
+
+---
+
 ## Disclaimer & Risiko
 *   **Lokalisasi Data:** Dataset saat ini memerlukan kalibrasi ulang untuk karakteristik tanah vulkanik spesifik di Indonesia (Data Balits Tanah).
 *   **Variabel Eksternal:** Belum memperhitungkan harga pupuk dinamis di pasar lokal.
